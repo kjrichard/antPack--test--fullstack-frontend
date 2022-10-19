@@ -1,0 +1,66 @@
+<div class="col-xl-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <div class="d-flex justify-content-between">
+                <h4 class="card-title mg-b-0">Usuarios Registrados</h4>
+                <button (click)="createUser()" type="button" class="btn btn-secondary btn-sm">+ Crear Usuario</button>
+               
+            </div>
+           <br>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table mg-b-0 text-md-nowrap">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Usuario</th>
+                            <th>Correo</th>
+                            <th>Telefono</th>
+                            <th>Webside</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of user, index as id">
+                            <th>{{ id + 1 }}</th>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.email }}</td>
+                            <td>{{ item.phone }}</td>
+                            <td>{{ item.website }}</td>
+                            <td class="w200">
+                                <div class="d-flex justify-content-center">
+                                    <button
+                                    type="button"
+                                    class="btn btn-outline-indigo float-right btn-round mr-3 btn-sm"
+                                    (click)="detail(item)"
+                                  >
+                                    <i class="fa fa-eye fa-sm"></i>
+                                  </button>
+
+                                  <button
+                                    type="button"
+                                    class="btn btn-outline-indigo float-right btn-round mr-3 btn-sm"
+                                    (click)="updateUser(item)"
+                                  >
+                                    <i class="fa fa-pencil fa-sm"></i>
+                                  </button>
+
+                                  <button
+                                    type="button"
+                                    class="btn btn-outline-indigo float-right btn-round btn-sm"
+                                    (click)="delete(item.id)"
+                                  >
+                                    <i class="fa fa-trash fa-sm"></i>
+                                  </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

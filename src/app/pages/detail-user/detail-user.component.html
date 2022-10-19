@@ -1,0 +1,260 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <!-- <div class="card-header bg-primary">
+                <h4 class="m-b-0 text-white">Formulario De Registro</h4>
+            </div> -->
+            <div class="card-body">
+                <form   
+                    autocomplete="off"
+                    [formGroup]="registerForm"
+                    id="registerForm">
+                    <div class="form-body">
+                        <div class="card-header bg-info">
+                            <h4 class="m-b-0 text-white">Datos personales</h4>
+                        </div>
+                        <hr>
+                        <div class="row p-t-10">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Nombre Completo</label>
+                                    <input 
+                                        type="text" 
+                                        id="name"
+                                        formControlName="name" 
+                                        class="form-control" 
+                                        placeholder="Bret"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('name')">  Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Nombre de usuario</label>
+                                    <input 
+                                        type="text" 
+                                        id="username"
+                                        formControlName="username"
+                                        class="form-control" 
+                                        placeholder="Bret"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('username')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                            
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Correo electronico</label>
+                                    <input 
+                                        type="email" 
+                                        id="email"
+                                        formControlName="email" 
+                                        class="form-control" 
+                                        placeholder="incere@april.biz"
+                                    >
+                                    <small class="ftext-danger" *ngIf="validate('email')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Telefono</label>
+                                    <input 
+                                        type="text" 
+                                        id="phone"
+                                        formControlName="phone"
+                                        class="form-control" 
+                                        placeholder="10-692-6593 x09125"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('phone')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Sitio web</label>
+                                    <input 
+                                        type="text" 
+                                        id="website"
+                                        formControlName="website" 
+                                        class="form-control" 
+                                        placeholder="nastasia.net"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('website')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <!--/row-->
+                      
+                        <div class="card-header bg-info">
+                            <h4 class="m-b-0 text-white">Direccion</h4>
+                        </div>
+                        <!--/row-->
+                        <div class="row p-t-10">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Calle</label>
+                                    <input 
+                                        type="text" 
+                                        id="street" 
+                                        formControlName="street"
+                                        class="form-control" 
+                                        placeholder="Victor Plains"
+                                    >
+                                    <small class="f text-danger" *ngIf="validate('street')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Suite</label>
+                                    <input 
+                                        type="text" 
+                                        id="suite"
+                                        formControlName="suite" 
+                                        class="form-control" 
+                                        placeholder="suite 879"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('suite')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                            
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Ciudad</label>
+                                    <input 
+                                        type="text" 
+                                        id="city" 
+                                        formControlName="city"
+                                        class="form-control" 
+                                        placeholder="Wisokyburgh"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('city')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Codigo postal</label>
+                                    <input 
+                                        type="text" 
+                                        id="zipcode"
+                                        formControlName="zipcode"
+                                        class="form-control" 
+                                        placeholder="10566-7771"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('zipcode')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                           
+                          
+                        </div>
+                        <!--/row-->
+
+                        <div class="card-header bg-info">
+                            <h4 class="m-b-0 text-white">Datos de Geolocalizacion</h4>
+                        </div>
+
+                        <div class="row p-t-10">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Latitud</label>
+                                    <input 
+                                        type="number" 
+                                        id="lat"
+                                        formControlName="lat" 
+                                        class="form-control" 
+                                        placeholder="43.9509"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('lat')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Longitud</label>
+                                    <input 
+                                        type="number" 
+                                        id="lng"
+                                        formControlName="lng"
+                                        class="form-control" 
+                                        placeholder="34.4618"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('lng')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--/row-->
+
+                        <div class="card-header bg-info">
+                            <h4 class="m-b-0 text-white">Datos de la empresa</h4>
+                        </div>
+                        <!--/row-->
+                        <div class="row p-t-10">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Nombre de la empresa</label>
+                                    <input 
+                                        type="text" 
+                                        id="company"
+                                        formControlName="company" 
+                                        class="form-control" 
+                                        placeholder="Deckow-Crist"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('company')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Eslogan</label>
+                                    <input 
+                                        type="text" 
+                                        id="catchPhrase"
+                                        formControlName="catchPhrase" 
+                                        class="form-control" 
+                                        placeholder="roactive didactic contingency"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('catchPhrase')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                            
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">BS</label>
+                                    <input 
+                                        type="text" 
+                                        id="bs"
+                                        formControlName="bs" 
+                                        class="form-control" 
+                                        placeholder="synergize scalable supply-chains"
+                                    >
+                                    <small class="text-danger" *ngIf="validate('bs')"> Campo Obligatorio </small> 
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--/row-->
+                    </div>
+                   
+                       
+                    <div class="justify-content-center">
+                        <button (click)="cancel()" class="btn btn-outline-info btn-block">Regresar a la lista de usuarios</button>
+                    </div>
+                    
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
